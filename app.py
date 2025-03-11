@@ -15,17 +15,24 @@ file_path = "SalesData.csv"
 data = csv_to_list(file_path)
   # Output the list
 
+#1
 
-def single(data):
-    row_totals = {}
-    for row in data [1: ]: 
-        store_name = row[0]
+def calc():
+    total = {}
+
+    for row in data[1:]:
+        store = row[0]
         sales = map(int, row[1:])
-        row_totals[store_name] = sum(sales)
-    return row_totals
+        ind =+ 1
+        total[store] = sum(sales)
+        avg = total / ind
+    calc()
 
-totals = single(data)
-print(totals)
+
+
+
+
+    
 
     
 
