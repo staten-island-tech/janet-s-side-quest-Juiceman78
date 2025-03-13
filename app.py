@@ -17,16 +17,21 @@ data = csv_to_list(file_path)
 
 #1
 
-def calc():
-    total = {}
+def calc(data):
+    avg = []
 
-    for row in data[1:]:
-        store = row[0]
-        sales = map(int, row[1:])
-        ind =+ 1
-        total[store] = sum(sales)
-        avg = total / ind
-    calc()
+    for row in data[1:]:      #Skips the first row
+        store = row[0]        # First column is the store name
+        nm = map(int, row[1:]) #Converted the sales into numbers
+        sales = list(nm)
+        total = sum(sales) / len(sales) #Found the average by dividing the sum of sales with how sales there were
+        avg.append((store, total))
+    
+    print(avg)
+    return avg
+calc(data)
+
+#2
 
 
 
