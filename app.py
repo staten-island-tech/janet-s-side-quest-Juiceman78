@@ -26,13 +26,33 @@ def calc(data):
         sales = list(nm)
         total = sum(sales) / len(sales) #Found the average by dividing the sum of sales with how sales there were
         avg.append((store, total))
-    
-    print(avg)
-    return avg
+
+    return avg, store, total
 calc(data)
 
+avg, store, total = calc(data)
+""" print(avg) """
 #2
 
+sorted_avg = sorted(avg, key=lambda x: x[1], reverse=True)
+""" print(sorted_avg) """
+
+#3
+
+totalavg = sum([x[1] for x in avg]) / len(avg)
+""" print(totalavg) """
+
+#4
+
+def avgcalc(data):
+    uavg = (totalavg * 0.8)
+
+    for store in data[1:]:
+        if store[1] < uavg:
+            print(store[0])
+avgcalc(data)
+    
+  
 
 
 
